@@ -6,14 +6,14 @@ whT = 320
 confThreshold =0.5
 nmsThreshold= 0.2
 
-classesFile = "D:\Face\yolo\coco.names"
+classesFile = "D:\Face\yolo\coco.names" #coco.names direktori
 classNames = []
 with open(classesFile, 'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
 print(classNames)
 
-modelConfiguration = "D:\Face\yolo\yolov3-tiny.cfg"
-modelWeights = "D:\Face\yolo\yolov3-tiny.weights"
+modelConfiguration = "D:\Face\yolo\yolov3-tiny.cfg" #file configuration direktori
+modelWeights = "D:\Face\yolo\yolov3-tiny.weights" #weights direktori
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
